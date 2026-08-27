@@ -42,7 +42,7 @@ jobs:
         id: check
         run: |
           PKG_VERSION=$(node -p "require('./package.json').version")
-          if npm view "@michengai/dsh-archive-manager@$PKG_VERSION" version >/dev/null 2>&1; then
+          if npm view "@ggtec528/dsh-archive-manager@$PKG_VERSION" version >/dev/null 2>&1; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "Version $PKG_VERSION already published; skipping publish."
           else

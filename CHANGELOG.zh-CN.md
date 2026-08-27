@@ -4,6 +4,13 @@
 
 以下发布说明会持续保留；新增版本时不再删除较早记录。
 
+## 0.1.17 — 2026-08-28
+
+- 修复 npm 发布工作流，使用正确的包作用域（`@ggtec528`）和 Trusted Publisher OIDC 配置。
+- 更新 `publish.yml` 中的版本检查步骤，使其与当前包名一致。
+
+发布包：[`@ggtec528/dsh-archive-manager@0.1.17`](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager/v/0.1.17)。
+
 ## 0.1.16 — 2026-08-27
 
 - 为归档分组的批量操作菜单补充恢复图标，使操作入口的视觉提示保持一致。

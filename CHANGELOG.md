@@ -4,6 +4,13 @@
 
 Published release notes are retained below; new versions are added without removing earlier entries.
 
+## 0.1.17 — 2026-08-28
+
+- Fixed the npm publish workflow to use the correct package scope (`@ggtec528`) and Trusted Publisher OIDC configuration.
+- Updated the version-check step in `publish.yml` to match the current package name.
+
+Published package: [`@ggtec528/dsh-archive-manager@0.1.17`](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager/v/0.1.17).
+
 ## 0.1.16 — 2026-08-27
 
 - Added a restore icon to archived-group bulk action menus for consistent action affordances.
