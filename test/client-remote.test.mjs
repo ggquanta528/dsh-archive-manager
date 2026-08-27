@@ -1,4 +1,4 @@
-// dsh-archive-manager client Remote integration test (node:test).
+// @ggtec528/dsh-archive-manager client Remote integration test (node:test).
 //
 // Reproduces the reported browser failure "cannot get property
 // remote.workspaceRegistry without inject": mounts the REAL client typert
@@ -53,7 +53,7 @@ materialize("@deepseek-ai/dsh-client-runtime");
 const typertClient = materialize("@deepseek-ai/dsh-typert-registry");
 const gatewayClient = materialize("@deepseek-ai/dsh-api-gateway");
 await import(pathToFileURL(fileURLToPath(new URL("../lib/client.js", import.meta.url))).href);
-const archiveManager = materialize("@michengai/dsh-archive-manager");
+const archiveManager = materialize("@ggtec528/dsh-archive-manager");
 const contribution = archiveManager.__test.ARCHIVE_MANAGER_REMOTE;
 
 const calls = [];

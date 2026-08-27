@@ -1,9 +1,9 @@
-// dsh-archive-manager host self-tests (node:test).
+// @ggtec528/dsh-archive-manager host self-tests (node:test).
 //
 // Resolution: the test tree contains a `node_modules` junction to the dsh
 // flat module fallback (`%USERPROFILE%\.dsh\profiles\node_modules`), so the
 // real @deepseek-ai packages resolve to the SAME copies the running harness
-// uses. Run: `node --test test/` from the dsh-archive-manager directory.
+// uses. Run: `node --test test/` from the @ggtec528/dsh-archive-manager directory.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { mkdtempSync, mkdirSync, writeFileSync, realpathSync, existsSync } from "node:fs";

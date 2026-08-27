@@ -11,13 +11,15 @@
   [English](README.md) · [更新日志](CHANGELOG.zh-CN.md) · [Apache-2.0](LICENSE)
 
   [![许可证：Apache-2.0](https://img.shields.io/badge/许可证-Apache--2.0-blue.svg)](LICENSE)
-  [![npm package](https://img.shields.io/npm/v/%40michengai%2Fdsh-archive-manager.svg?label=npm%20package)](https://www.npmjs.com/package/@michengai/dsh-archive-manager)
-  [![npm 下载量](https://img.shields.io/npm/dt/%40michengai%2Fdsh-archive-manager.svg?label=npm%20%E4%B8%8B%E8%BD%BD%E9%87%8F)](https://www.npmjs.com/package/@michengai/dsh-archive-manager)
-  [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/MichengAI/dsh-archive-manager)
+  [![npm](https://img.shields.io/npm/v/%40ggquanta528%2Fdsh-archive-manager)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
+  [![GitHub](https://img.shields.io/badge/GitHub-ggquanta528%2Fdsh--archive--manager-0f766e.svg)](https://github.com/ggquanta528/dsh-archive-manager)
+  [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/ggquanta528/dsh-archive-manager)
   [![Node.js 22 or later](https://img.shields.io/badge/Node.js-22%20or%20later-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org/)
 </div>
 
 > DSH Archive Manager 是社区维护的 DeepSeek Harness（DSH）插件，并非 DeepSeek AI 官方产品。
+>
+> **本仓库是 [@michengai/dsh-archive-manager](https://github.com/MichengAI/dsh-archive-manager) 的复刻分支。** 此复刻移除了工作区侧栏中的"删除会话"选项，以避免误操作；永久删除仍可通过「设置 → 已归档」进行。其他所有功能保持不变。
 
 ## 功能概览
 
@@ -29,7 +31,7 @@
 - 经确认后永久删除会话、工作区归属、归档标记和投影缓存。
 - 经确认后删除全部已归档聊天，包含子代理。
 - 已删除的未加载归档会话会立即从已连接客户端的侧栏移除。
-- 可把一句话复制到 DSH、Codex 或 WorkBuddy，让对方代装到本机 DSH。
+- **本复刻特性：** 工作区侧栏中不再显示「删除会话」选项，以避免误操作；永久删除可通过「设置 → 已归档」进行。
 
 ## 界面预览
 
@@ -50,74 +52,35 @@
 | [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) | 本产品的运行宿主，提供模型、会话、工具和插件系统 |
 | [DSH Codex Desktop](https://github.com/MichengAI/dsh-codex-desktop) | 下载安装即用的桌面产品，已内置本产品和其他 5 个功能产品 |
 | [DSH Codex Suite](https://github.com/MichengAI/dsh-codex-ui/tree/main/packages/dsh-codex-suite) | 面向已有 DSH Web 环境的一键套件，会安装本产品和其他 5 个功能产品 |
-| 6 个功能产品 | [Codex UI](https://github.com/MichengAI/dsh-codex-ui) · [IM Connect](https://github.com/MichengAI/dsh-im-connect) · [Automation](https://github.com/MichengAI/dsh-automation) · [Skills Manager](https://github.com/MichengAI/dsh-skills-manager) · [Archive Manager](https://github.com/MichengAI/dsh-archive-manager) · [Agency Agents](https://github.com/MichengAI/dsh-agency-agents) |
+| 6 个功能产品 | [Codex UI](https://github.com/MichengAI/dsh-codex-ui) · [IM Connect](https://github.com/MichengAI/dsh-im-connect) · [Automation](https://github.com/MichengAI/dsh-automation) · [Skills Manager](https://github.com/MichengAI/dsh-skills-manager) · [Archive Manager](https://github.com/ggquanta528/dsh-archive-manager) · [Agency Agents](https://github.com/MichengAI/dsh-agency-agents) |
 
 ## 前置条件
 
 - 已可正常运行 DeepSeek Harness Web，且可在 PowerShell 中使用 `dsh`。
 - 以下示例使用 `web` profile；请替换为实际目标 profile。
-- 从源码安装或二次开发需要 Node.js 22+ 与 pnpm；仅从 npm 安装无需另外执行 `pnpm install`。
+- 二次开发需要 Node.js 22+ 与 pnpm。
 
 ## 安装
 
-`dsh plugin add` 会转发到 profile 目录里的 `pnpm add`。不写版本、不指定官方源时，本机镜像和最短发布间隔可能让你停在旧版。
-
-### 交给其他 Agent 一句话安装
-
-本插件运行在 DeepSeek Harness Web 里。把下面其中一句复制到 DSH、Codex 或 WorkBuddy，让它代你安装到本机 `web` profile。
-
-从 npm 安装：
-
-```text
-请把 DSH 插件 @michengai/dsh-archive-manager 最新版装进本机 web profile，使用官方 npm 源执行：dsh plugin --profile web add @michengai/dsh-archive-manager@latest --registry=https://registry.npmjs.org/。装完执行 dsh --profile web --dump-config，确认已挂载 archive-manager，并提醒我重启 DSH Web 后硬刷新浏览器。
-```
-
-从源码安装：
-
-```text
-请从源码安装 DSH 插件 https://github.com/MichengAI/dsh-archive-manager：克隆到本机后执行 pnpm install --frozen-lockfile 和 pnpm build，再用 dsh plugin --profile web add . 把当前目录装进 web profile。不要只复制 lib。装完执行 dsh --profile web --dump-config，确认已挂载 archive-manager，并提醒我重启 DSH Web 后硬刷新浏览器。
-```
-
-| 产品 | 怎么用 |
-| --- | --- |
-| DSH | 把上面其中一句发给当前会话。 |
-| Codex | 把上面其中一句发给 Codex，让它在本机执行安装。 |
-| WorkBuddy | 把上面其中一句发给 WorkBuddy；源码安装也可同时粘贴仓库地址 `https://github.com/MichengAI/dsh-archive-manager`。 |
-
-Codex 和 WorkBuddy 只负责代装；装好后仍要打开 DSH Web 使用「设置 → 已归档」。
-
-也可以自己执行同一条 npm 命令：
-
-```powershell
-dsh plugin --profile web add @michengai/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
-```
-
-未把 `dsh` 装进 PATH 时，把开头的 `dsh` 换成 `npx --yes @deepseek-ai/dsh`。
-
-### 从官方 npm 安装最新版
-
-在任意 PowerShell 目录执行：
+### 从 npm 安装（推荐）
 
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-dsh plugin --profile web add @michengai/dsh-archive-manager@latest --registry=https://registry.npmjs.org/
+dsh plugin --profile web add @ggtec528/dsh-archive-manager
 dsh --profile web --dump-config
 ```
 
-需要钉死某一版时，把 `@latest` 换成具体版本，例如 `@x.y.z`。
-
-配置输出中应包含 `workspace-archive-manager` 与 `ui-workspace-archive-manager`。安装后重启 DSH Web 并在浏览器硬刷新；请勿手工复制客户端文件，否则设置页和归档菜单不会被挂载。
+完成后重启 DSH Web 并硬刷新浏览器。配置输出中应包含 `workspace-archive-manager` 与 `ui-workspace-archive-manager`。
 
 ### 从源码安装
 
-适用于调试或使用未发布改动。克隆后的目录会直接作为插件安装路径：
+克隆仓库并以本地插件方式安装：
 
 ```powershell
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
-Set-Location D:\Repository\deepseek-harness-plugin
-git clone https://github.com/MichengAI/dsh-archive-manager.git
+git clone https://github.com/ggquanta528/dsh-archive-manager.git
 Set-Location .\dsh-archive-manager
 pnpm install --frozen-lockfile
 pnpm build
@@ -125,7 +88,19 @@ dsh plugin --profile web add .
 dsh --profile web --dump-config
 ```
 
-完成后重启 DSH Web 并硬刷新浏览器。`dsh plugin ... add .` 会读取当前目录的包信息和 `cordis.patch.yml`；不要改为直接复制 `lib` 目录。
+### 从本地目录安装（开发用）
+
+```powershell
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
+Set-Location /path/to/dsh-archive-manager
+pnpm install --frozen-lockfile
+pnpm build
+dsh plugin --profile web add .
+dsh --profile web --dump-config
+```
+
+未把 `dsh` 装进 PATH 时，把开头的 `dsh` 换成 `npx --yes @deepseek-ai/dsh`。
 
 ## 使用
 
@@ -134,7 +109,7 @@ dsh --profile web --dump-config
 3. 按标题搜索，按更新时间、创建时间或标题排序，或按项目筛选列表。
 4. 点击「取消归档」恢复单个会话，或在顶部点击「全部恢复」。
 5. 打开项目标题右侧菜单，可恢复或删除该项目的全部已归档聊天。
-6. 点击删除图标永久移除单个会话；删除前确认提示。**删除无法撤销。**
+6. 如需永久删除单个会话，请前往「设置 → 已归档」，找到会话后点击删除图标。**删除无法撤销。**
 
 安装或升级后找不到入口时，重启 DSH Web 并硬刷新浏览器；入口位于「设置」中，连接器之后。
 

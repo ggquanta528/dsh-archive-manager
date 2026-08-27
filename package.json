@@ -1,5 +1,5 @@
 {
-  "name": "@michengai/dsh-archive-manager",
+  "name": "@ggtec528/dsh-archive-manager",
   "version": "0.1.16",
   "description": "NPM-installable DSH Web plugin for managing archived sessions.",
   "type": "module",
@@ -80,11 +80,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MichengAI/dsh-archive-manager.git"
+    "url": "git+https://github.com/ggquanta528/dsh-archive-manager.git"
   },
-  "homepage": "https://github.com/MichengAI/dsh-archive-manager#readme",
+  "homepage": "https://github.com/ggquanta528/dsh-archive-manager#readme",
   "bugs": {
-    "url": "https://github.com/MichengAI/dsh-archive-manager/issues"
+    "url": "https://github.com/ggquanta528/dsh-archive-manager/issues"
   },
   "keywords": [
     "deepseek",

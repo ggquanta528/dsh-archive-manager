@@ -1,4 +1,4 @@
-// dsh-archive-manager client bundle self-tests (node:test).
+// @ggtec528/dsh-archive-manager client bundle self-tests (node:test).
 //
 // 使用真实 client-runtime 模块实例化已归档会话管理客户端 bundle。
 // bundle and the REAL static module table (react, cordis, ui-slots,
@@ -76,7 +76,7 @@ const CLIENT_BUNDLE = fileURLToPath(new URL("../lib/client.js", import.meta.url)
 await loadBundle(RUNTIME_BUNDLE);
 const runtime = materialize("@deepseek-ai/dsh-client-runtime");
 await loadBundle(CLIENT_BUNDLE);
-const bundle = materialize("@michengai/dsh-archive-manager");
+const bundle = materialize("@ggtec528/dsh-archive-manager");
 
 const t = bundle.__test;
 
