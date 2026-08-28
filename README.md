@@ -11,7 +11,7 @@
   [简体中文](README.zh-CN.md) · [Changelog](CHANGELOG.md) · [Apache-2.0](LICENSE)
 
   [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
-  [![npm](https://img.shields.io/npm/v/%40ggquanta528%2Fdsh-archive-manager)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
+  [![npm](https://img.shields.io/npm/v/%40ggtec528%2Fdsh-archive-manager)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
   [![GitHub](https://img.shields.io/badge/GitHub-ggquanta528%2Fdsh--archive--manager-0f766e.svg)](https://github.com/ggquanta528/dsh-archive-manager)
   [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/ggquanta528/dsh-archive-manager)
   [![Node.js 22 or later](https://img.shields.io/badge/Node.js-22%20or%20later-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -34,10 +34,6 @@
 - **Fork difference:** The "Delete Session" option is removed from the workspace sidebar to prevent accidental deletion. Permanent deletion is still available through **Settings → Archived**.
 
 ## Screenshots
-
-Open the sidebar session menu and choose **Archive session**:
-
-![Archive a session from the session menu](assets/screenshots/archive-session-menu.png)
 
 Search, sort, filter by project, unarchive, or permanently delete chats in **Settings → Archived**:
 
@@ -162,3 +158,7 @@ Licensed under [Apache License 2.0](LICENSE).
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for retained release notes.
+
+## Acknowledgments
+
+Thanks to [@michengai/dsh-archive-manager](https://github.com/MichengAI/dsh-archive-manager) for the original repository that this project was forked from.

@@ -11,7 +11,7 @@
   [English](README.md) · [更新日志](CHANGELOG.zh-CN.md) · [Apache-2.0](LICENSE)
 
   [![许可证：Apache-2.0](https://img.shields.io/badge/许可证-Apache--2.0-blue.svg)](LICENSE)
-  [![npm](https://img.shields.io/npm/v/%40ggquanta528%2Fdsh-archive-manager)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
+  [![npm](https://img.shields.io/npm/v/%40ggtec528%2Fdsh-archive-manager)](https://www.npmjs.com/package/@ggtec528/dsh-archive-manager)
   [![GitHub](https://img.shields.io/badge/GitHub-ggquanta528%2Fdsh--archive--manager-0f766e.svg)](https://github.com/ggquanta528/dsh-archive-manager)
   [![DSH Web Plugin](https://img.shields.io/badge/DSH%20Web-Plugin-0f766e.svg)](https://github.com/ggquanta528/dsh-archive-manager)
   [![Node.js 22 or later](https://img.shields.io/badge/Node.js-22%20or%20later-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -34,10 +34,6 @@
 - **本复刻特性：** 工作区侧栏中不再显示「删除会话」选项，以避免误操作；永久删除可通过「设置 → 已归档」进行。
 
 ## 界面预览
-
-在侧栏会话菜单中选择「归档会话」：
-
-![从会话菜单归档会话](assets/screenshots/archive-session-menu.png)
 
 在「设置 → 已归档」中搜索、排序、按项目筛选、取消归档或永久删除：
 
@@ -162,3 +158,7 @@ pnpm pack:check
 ## 更新日志
 
 完整保留的发布说明见 [CHANGELOG.zh-CN.md](CHANGELOG.zh-CN.md)。
+
+## 致谢
+
+感谢 [@michengai/dsh-archive-manager](https://github.com/MichengAI/dsh-archive-manager) 为本项目提供复刻的原仓库。
